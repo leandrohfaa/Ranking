@@ -3,6 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
+    <link href="{{ asset('/resources/css/styles.css') }}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
@@ -17,10 +19,9 @@
     <div class="container text-center">
         <br>
         <div class="btn-group">
-            <a class="btn btn-primary btn-lg" href="{{ route('clube.create') }}">+    Novo Clube</a>
-            <a class="btn btn-success btn-lg" href="{{ route('competicao.list') }}">Veja as Competições</a>
-            <a class="btn btn-info btn-lg" href="{{ route('clube.create') }}">🏆 Defina seu Título</a>
-            <a class="btn btn-info btn-lg" href="{{ route('clube.create') }}">Ver Ranking</a>
+            <a class="btn btn-primary btn-lg" href="{{ route('clube.create') }}">+ Novo Clube</a>
+            <a class="btn btn-success btn-lg" href="{{ route('competicao.list') }}">🎯 Veja as Competições</a>
+            <a class="btn btn-info btn-lg" href="{{ route('index.list') }}">⬅️Voltar</a>
         </div>
         <br>
     </div>
@@ -29,24 +30,53 @@
         .btn-group {
             display: flex;
             justify-content: center;
-            gap: 30px; /* Define um espaço consistente entre os botões */
+            gap: 30px;
+            /* Define um espaço consistente entre os botões */
         }
 
         .btn-group .btn {
-            padding: 15px 30px; /* Ajuste de padding para tornar os botões mais robustos */
+            padding: 15px 30px;
+            /* Ajuste de padding para tornar os botões mais robustos */
+            font-family: 'Poppins', sans-serif;
+            /* Fonte moderna */
+            font-size: 16px;
+            /* Tamanho de fonte */
+            font-weight: 600;
+            /* Negrito */
+            border-radius: 5px;
+            /* Cantos arredondados */
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            /* Transição suave para hover */
         }
 
         /* Efeito de hover para melhorar a interatividade */
         .btn:hover {
+            background-color: #007bff;
+            /* Muda a cor ao passar o mouse */
+            color: white;
+            /* Cor do texto */
             opacity: 0.9;
-            transform: translateY(-2px); /* Leve efeito de flutuação ao passar o mouse */
-            transition: all 0.2s ease-in-out;
+            transform: translateY(-2px);
+            /* Leve efeito de flutuação ao passar o mouse */
         }
 
         /* Efeito para tornar os botões mais dinâmicos */
         .btn:active {
-            transform: translateY(0); /* Volta ao estado normal ao clicar */
-            transition: all 0.1s ease-in-out;
+            transform: translateY(0);
+            /* Volta ao estado normal ao clicar */
+        }
+
+        /* Adicione um efeito de sombra sutil */
+        .btn {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            /* Sombra sutil */
+        }
+
+        .btn:focus {
+            outline: none;
+            /* Remove o contorno padrão */
+            box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
+            /* Sombra ao focar */
         }
     </style>
 </body>
