@@ -11,8 +11,11 @@ class TitulosController extends Controller
 {
     public function index()
     {
-        $titulos = titulos::all(); 
-        return view('titulo.form', compact('titulos'));
+        $titulos = titulos::get(); 
+        $clubes = clubes::get();
+        $competicoes = competicao::get();
+        
+        return view('titulo.form', compact('titulos','clubes','competicoes'));
     }
     public function form()
     {
